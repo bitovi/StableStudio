@@ -24,4 +24,3 @@ jobs:
           lb_healthcheck: TCP:3000
           # 2vCPU, 8GB RAM
           ec2_instance_type: m6i.large
-          aws_resource_identifier: "bitops-metrics"
