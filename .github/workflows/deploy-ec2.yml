@@ -1,0 +1,24 @@
+name: deploy-ec2
+on:
+  push:
+    branches: [ sandbox ]
+
+jobs:
+  deploy-ec2:
+    runs-on: ubuntu-latest
+    steps:
+      - id: deploy
+        # Pin to use the configurable instance size feature
+        uses: bitovi/github-actions-deploy-docker-to-ec2@v0.5.2
+        with:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_DEVOPS_SANDBOX }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEVOPS_SANDBOX }}
+          aws_default_region: us-east-1
+          # Pin AWS AMI to avoid instance recreation on upstream AMI update
+          aws_ami_id: ami-0f1bae6c3bedcc3b5
+          ec2_volume_size: 100
+          app_port: 3000
+          lb_healthcheck: TCP:3000
+          # 2vCPU, 8GB RAM
+          ec2_instance_type: m6i.large
+          aws_resource_identifier: "bitops-metrics"
