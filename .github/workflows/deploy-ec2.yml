@@ -1,7 +1,7 @@
 name: deploy-ec2
 on:
   push:
-    branches: [ sandbox ]
+    branches: [ leo-testing ]
 
 jobs:
   deploy-ec2:
