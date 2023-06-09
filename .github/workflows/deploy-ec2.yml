@@ -25,7 +25,11 @@ jobs:
           lb_healthcheck: TCP:3000
           # 2vCPU, 8GB RAM
           ec2_instance_type: m6i.large
-          dot_env: ${{ secrets.DOT_ENV_SANDBOX }}
+          dot_env: ${{ secrets.DOT_ENV_LEO }}
+          
+          stack_destroy: true
+          tf_state_bucket_destroy: true
+          
       # - name: Create Sentry release
       #   uses: getsentry/action-release@v1
       #   env:
