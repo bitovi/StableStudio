@@ -1,7 +1,7 @@
 name: deploy-ec2
 on:
   push:
-    branches: [ leo-testing ]
+    branches: [ fco-test ]
 
 jobs:
   deploy-ec2:
