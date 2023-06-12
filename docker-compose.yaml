@@ -14,7 +14,5 @@ services:
       - .:/usr/src/app
       - /usr/src/app/.yarn
       - /usr/src/app/.husky
-      - /usr/src/app/node_modules
     environment:
-      - DOCKER_BUILDKIT=1 
-      - BUILDKIT_PROGRESS=plain 
+      - DOCKER_BUILDKIT=1
