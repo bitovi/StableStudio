@@ -27,7 +27,7 @@ jobs:
           ec2_instance_type: m6i.large
           dot_env: ${{ secrets.DOT_ENV_LEO }}
           
-          #stack_destroy: true
+          stack_destroy: 
           tf_state_bucket_destroy: true
           
       # - name: Create Sentry release
