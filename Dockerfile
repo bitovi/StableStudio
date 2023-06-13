@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:experimental
-FROM node:latest
+FROM node:18-bullseye
 ENV APP_PORT=3000
 WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
