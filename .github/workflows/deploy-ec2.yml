@@ -25,6 +25,5 @@ jobs:
           # 2vCPU, 8GB RAM
           ec2_instance_type: m6i.large
 
-          stack_destroy: 
+          stack_destroy: true
           tf_state_bucket_destroy: true
-          
