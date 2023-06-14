@@ -6,13 +6,13 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const gitHash = ChildProcess.execSync("git rev-parse HEAD").toString().trim();
+  //const gitHash = ChildProcess.execSync("git rev-parse HEAD").toString().trim();
 
   process.env = {
     ...process.env,
     ...loadEnv(mode, process.cwd()),
 
-    VITE_GIT_HASH: gitHash,
+    VITE_GIT_HASH: "0000000000000000000000000000000000000000",
   };
 
   return {
